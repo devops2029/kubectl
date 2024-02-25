@@ -1,0 +1,27 @@
+    1  cd ~/intro && ls
+    2  cat Dockerfile 
+    3  docker build -t hugo-site:v1 .
+    4  docker images hugo-site:v1
+    5  docker run -d --rm --nmae hugo -p 8080:8080 hugo-site:v1
+    6  docker run -d --rm --name  hugo -p 8080:8080 hugo-site:v1
+    7  clear
+    8  docker ps | grep hugo
+    9  docker stop hugo
+   10  docker ps
+   11  docker tag hugo-site:v1 registry-kubeacademy-w08-s418.acad-kube-prd1.labs.kube.academy/hugo-site:v1
+   12  # docker tag hugo-site:v1 registry-kubeacademy-w08-s418.acad-kube-prd1.labs.kube.academy/hugo-site:v1
+   13  docker push registry-kubeacademy-w08-s418.acad-kube-prd1.labs.kube.academy/hugo-site:v1
+   14  cd ~/kubernetes-yaml
+   15  cat deployment.yaml
+   16  kubectl apply -f deployment.yaml 
+   17  cat service.yaml 
+   18  kubectl apply -f service.yaml
+   19  kubectl get service
+   20  kubectl delete  -f service.yaml
+   21  kubectl apply -f cluster-ip-service.yaml
+   22  curl http://curl http://hugo-site.kubeacademy-w08-s418.svc.cluster.local/
+   23  kubectl get endpoints
+   24  history
+   25  kubectl delete -f deployment.yaml
+   26  kubectl delete -f cluster-ip-service.yaml
+   27  history
