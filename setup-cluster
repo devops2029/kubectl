@@ -1,0 +1,31 @@
+[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+
+kind create cluster # Default cluster context name is `kind`.
+
+kind create cluster --name kind-2
+kind get clusters
+
+kubectl cluster-info --context kind-kind
+kubectl cluster-info --context kind-kind-2
+
+kind delete cluster
+
+kind load docker-image my-custom-image-0 my-custom-image-1
+
+docker build -t my-custom-image:unique-tag ./my-image-dir
+kind load docker-image my-custom-image:unique-tag
+kubectl apply -f my-manifest-using-my-image:unique-tag
+
+docker exec -it my-node-name crictl images
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+
+
+  
+
