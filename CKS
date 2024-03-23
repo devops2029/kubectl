@@ -1,1 +1,18 @@
 
+Certified Kubernetes Security (CKS)
+The CKS certification is intended to validate a candidate's knowledge and proficiency in securing Kubernetes clusters and containerized applications. The exam covers a broad range of topics related to Kubernetes security best practices, including cluster setup, Kubernetes security, secure container lifecycle management, security auditing and monitoring, network security, and security tool utilization.
+
+The first topic, cluster setup, involves configuring Kubernetes clusters with security in mind, such as configuring network policies, securing etcd, and using secure communications.
+
+The second topic, cluster hardening, ensures that the candidate understands the Kubernetes security model, including pod security policies, service accounts, and role-based access controls (RBAC).
+
+The third topic, secure container lifecycle management, emphasizes the importance of securely building, deploying, and managing container images and containers using Kubernetes best practices.
+
+The fourth topic, security auditing and monitoring, involves performing security audits and monitoring Kubernetes clusters for security vulnerabilities.
+
+The fifth topic, network security, covers securing Kubernetes network traffic with network policies and other security mechanisms.
+
+The sixth topic, security tools, includes understanding how to use Kubernetes security tools such as Falco, Sysdig, and other security-related add-ons.
+
+Obtaining the CKS certification can demonstrate to potential employers that the candidate has the necessary skills and expertise to secure Kubernetes clusters and containerized applications, making them a valuable asset to any organization that uses Kubernetes.
+
