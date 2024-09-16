@@ -1,3 +1,10 @@
-1) Namespace "stucked" as Terminating, How I removed it
+1) Namespace and CRD "stucked" as Terminating, How I removed it
+---------------------------------------------------------------
 # kubectl get namespace longhorn-system -o json   | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/"   | kubectl replace --raw /api/v1/namespaces/longhorn-system/finalize -f -
+# kubectl patch crd/engineimages.longhorn.io -p '{"metadata":{"finalizers":[]}}' --type=merge ;
+# kubectl patch crd/nodes.longhorn.io -p '{"metadata":{"finalizers":[]}}' --type=merge ;
+
+Reinstall longhorn
+------------------
+# helm install longhorn ./chart --namespace longhorn-system --create-namespace
 
