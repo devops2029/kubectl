@@ -4,7 +4,11 @@
 # kubectl patch crd/engineimages.longhorn.io -p '{"metadata":{"finalizers":[]}}' --type=merge ;
 # kubectl patch crd/nodes.longhorn.io -p '{"metadata":{"finalizers":[]}}' --type=merge ;
 
-Reinstall longhorn
-------------------
+Install longhorn
+----------------
 # helm install longhorn ./chart --namespace longhorn-system --create-namespace
 
+Uninstalling Longhorn using Helm
+-------------------------------
+Run this command:
+#helm uninstall longhorn -n longhorn-system
